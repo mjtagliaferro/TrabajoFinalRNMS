@@ -1,11 +1,8 @@
 ## Regularización
 
 - ¿Qué efecto tuvo BatchNorm en la estabilidad y velocidad del entrenamiento?
-- 
-Al agregar BatchNorm, la velocidad del entrenamiento disminuyó de 3 minutos a 2.9 minutos. En cuanto a la estabilidad del entrenamiento, se puede ver que la curva de pérdida (loss) desciende de forma más suave hacia el mínimo. La curva de accuracy también se ve más regular, con menos picos y caídas repentinas. De esta manera, ambas métricas muestran menor variabilidad.
+Al agregar BatchNorm, la velocidad del entrenamiento disminuyó de 3 minutos a 2.9 minutos. En cuanto a la estabilidad del entrenamiento, se puede ver que la curva de pérdida (loss) desciende de forma más suave hacia el mínimo. La curva de accuracy también se ve más regular, con menos picos y caídas repentinas. De esta manera, ambas métricas muestran menor variabilidad. Cabe aclarar que la sesión luminous-croc-1000 se corresponde con la aplicación de BatchNorm.
 <img width="933" height="370" alt="Captura de pantalla 2025-11-25 a la(s) 3 18 38 p  m" src="https://github.com/user-attachments/assets/23309abe-4734-4a41-bedc-bf17cdc86c57" />
-
-La sesión luminous-croc-1000 se corresponde con la aplicación de BatchNorm.
 
 - ¿Cambió la performance de validación al combinar BatchNorm con Dropout?
 Implementando solo BatchNorm, durante la validación, el accuracy resultó igual al 53,04%, mientras que la pérdida (loss) se igualó a 1,23. Al agregar Dropout, el accuracy de validación ascendió a 55,8% y la pérdida (loss) disminuyó a 1,09. En los gráficos, al comparar, puede observarse una mayor estabilidad tanto en el accuracy como en la loss a lo largo de las diferentes épocas. Las curvas presentan menos picos bruscos. 
