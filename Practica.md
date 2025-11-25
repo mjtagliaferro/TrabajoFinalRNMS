@@ -32,12 +32,15 @@ La inicialización Uniforme (amarillo), por su parte, tuvo un desempeño similar
 <img width="881" height="475" alt="Captura de pantalla 2025-11-24 a la(s) 7 42 09 p  m" src="https://github.com/user-attachments/assets/a23428a6-b9b5-4f30-a764-a0b5dbd70f7d" />
 
 - ¿Alguna inicialización provocó inestabilidad (pérdida muy alta o NaNs)?
+  
 No, ninguna de las inicializaciones provocó inestabilidad. La mayor pérdida estuvo dada por la inicialización Uniforme durante la validación, alcanzando una loss de 1,4. 
 
 - ¿Qué impacto tiene la inicialización sobre las métricas de validación?
- En la validación, las inicializaciones Xavier y He obtuvieron un accuracy del 57,45%. La inicialización Uniforme resultó en un accuracy igual al 51,93%, por lo que fue notablemente menor. Ahora bien, en la pérdida (loss), la inicialización Xavier obtuvo el menor valor (1,15), seguida por He (1,31) y por último, Uniforme (1,41).
+  
+En la validación, las inicializaciones Xavier y He obtuvieron un accuracy del 57,45%. La inicialización Uniforme resultó en un accuracy igual al 51,93%, por lo que fue notablemente menor. Ahora bien, en la pérdida (loss), la inicialización Xavier obtuvo el menor valor (1,15), seguida por He (1,31) y por último, Uniforme (1,41).
 
 - ¿Por qué `bias` se suele inicializar en cero?
+  
 Los bias se inicializan en cero porque no contribuyen a la amplificación o atenuación del gradiente porque no se multiplican como los pesos. Además, establecerlos en cero evita introducir un desplazamiento arbitrario en las activaciones antes de que el modelo empiece a aprender. 
 
 
