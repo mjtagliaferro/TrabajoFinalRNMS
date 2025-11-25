@@ -8,8 +8,7 @@ Al agregar BatchNorm, la velocidad del entrenamiento disminuyó de 3 minutos a 2
 - ¿Cambió la performance de validación al combinar BatchNorm con Dropout?
 
 Implementando solo BatchNorm, durante la validación, el accuracy resultó igual al 53,04%, mientras que la pérdida (loss) se igualó a 1,23. Al agregar Dropout, el accuracy de validación ascendió a 55,8% y la pérdida (loss) disminuyó a 1,09. En los gráficos, al comparar, puede observarse una mayor estabilidad tanto en el accuracy como en la loss a lo largo de las diferentes épocas. Las curvas presentan menos picos bruscos. Cabe destacar que agreeable-ape-655 es la sesión que combina BatchNorm y Dropout.
-<img width="705" height="287" alt="Captura de pantalla 2025-11-25 a la(s) 3 21 44 p  m" src="https://github.com/user-attachments/assets/44b31423-faf4-42a9-8acf-7a2b8b8e338f" />
-<img width="657" height="314" alt="Captura de pantalla 2025-11-25 a la(s) 3 23 39 p  m" src="https://github.com/user-attachments/assets/67eea20c-9abd-4389-a751-e8a66b8e410b" />
+<img width="694" height="611" alt="Captura de pantalla 2025-11-25 a la(s) 3 27 06 p  m" src="https://github.com/user-attachments/assets/7c5494e6-4ec9-4844-8888-621f743c0a48" />
 
 
 - ¿Qué combinación de regularizadores dio mejores resultados en tus pruebas?
