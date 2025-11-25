@@ -2,8 +2,11 @@
 
 ## 1. Dataset y Preprocesamiento
 - ¿Por qué es necesario redimensionar las imágenes a un tamaño fijo para una MLP?
+  
 Una MLP (MultiLayer Perceptron) no trabaja con imágenes sino con vectores unidimensionales, por lo que cada imagen debe convertirse a un vector de tamaño fijo para ingresar a la red. El tamaño de los vectores depende del tamaño de las imágenes: la cantidad de valores que tiene el vector es igual a la multiplicación entre la cantidad de canales, el ancho y el alto de la imagen. Si se utilizaran imágenes con tamaños distintos, los vectores resultantes tendrían diferente cantidad de valores, y esto generaría incompatibilidad con la MLP. Como la MLP define sus pesos en función del tamaño de la entrada, ingresar más o menos valores de los esperados haría que la red no funcione.
+
 - ¿Qué ventajas ofrece Albumentations frente a otras librerías de transformación como `torchvision.transforms`?
+  
 Albumentations es una librería que se usa para aumentar artificialmente la cantidad y la diversidad de datos de entrenamiento generando copias modificadas de datos existentes. A diferencia de torchvision, que utiliza tensores de PyTorch, Albumentations opera sobre arrays de Numpy. Esto permite que las transformaciones sean más rápidas y eficientes. A su vez, ofrece más parámetros para ajustar las transformaciones (como probabilidad, intensidad y modos de relleno); y proporciona un mejor manejo de bounding boxes y keypoints. También, presenta un soporte integrado para la aumentación de máscaras al operar sobre imágenes: alinea máscaras con transformaciones geométricas y mantiene la integridad de los valores de las máscaras.
 - ¿Qué hace `A.Normalize()`? ¿Por qué es importante antes de entrenar una red?
 La transformación A.Normalize() se utiliza para normalizar los valores de los píxeles de cada canal de una imagen, restando el valor medio del canal y dividiendo por la desviación estándar. Se aplica tanto a las imágenes de entrenamiento como a las de validación. 
